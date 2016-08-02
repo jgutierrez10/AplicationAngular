@@ -1,0 +1,20 @@
+<h3 class="text-center">Ejemplo Modelos</h3>
+<hr>
+<div class="col-sm-6">
+	<form>
+		<div class="form-group">    		
+			<label class="control-label" for="nombreCliente">Nombre Completo del Cliente: </label>
+			<input type="text" id="nombreCliente" class="form-control" name="nombreCliente" ng-model="nombreCliente">
+		</div>
+	</form>
+</div>
+<div class="col-sm-6" ng-controller="estilosController">
+	<div class="box-model" ng-click="cambiarEstilos()" ng-dblclick="agregarClase()">
+		<div class="box-model-heading" ng-style="estiloModificado">
+			<h3>Nombre del Cliente: </h3>
+		</div>
+		<div class="box-model-body" ng-class="tituloEspecial">
+			<h2>{{ nombreCliente }}</h2>
+		</div>
+	</div>
+</div>

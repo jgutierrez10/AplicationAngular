@@ -1,0 +1,14 @@
+<h3 class="text-center">Ejemplos Manipular DOM </h3>
+<hr>
+<div class="row" ng-controller="manipularDOMController">
+	<div class="col-sm-4">
+		<button class="btn btn-primary btn-sm btn-block" ng-click="visualizarMensaje()">Visualizar Mensaje</button>
+		<br>
+		<button class="btn btn-danger btn-sm btn-block" ng-click="ocultarMensaje()">Ocultar Mensaje</button>
+	</div>
+	<div class="col-sm-8 text-justify" ng-show="visibilidadMensaje">
+		<blockquote class="blockquote">
+			<p class="m-b-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+		</blockquote>
+	</div>
+</div>

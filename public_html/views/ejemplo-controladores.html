@@ -1,0 +1,64 @@
+<h3 class="text-center">Ejemplo Controladores</h3>
+<hr>
+<div class="col-sm-6" ng-controller="cambioDolarController">
+	<div class="col-sm-8">
+		<form>
+			<div class="form-group">
+				<label class="control-label text-left">
+					Precio por Dolar: {{ precioTasa }} BsF.
+				</label>
+				<button class="btn btn-info btn-xs text-right" ng-click="getMensajeAyuda()">
+					Ayuda
+				</button>
+			</div>
+			<div class="form-group">    		
+				<label class="control-label" for="cantidadDolar">Ingrese Cantidad de Dolares: </label>
+				<input type="text" id="cantidadDolar" class="form-control" name="cantidadDolar" ng-model="cantidadDolar">
+				<div class="help-block">
+					{{ mensajeAyuda }}
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="col-sm-4">
+		<div class="box-model">
+			<div class="box-model-heading">
+				<h3>Precio de Cambio Dolar a Bolivares: </h3>
+			</div>
+			<div class="box-model-body">
+				<h2>{{ (cantidadDolar * precioTasa) }} BsF. </h2>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="col-sm-6" ng-controller="cambioEuroController">
+	<div class="col-sm-8">
+		<form>
+			<div class="form-group">
+				<label class="control-label">
+					Precio por Euro: {{ precioTasa }} BsF.
+				</label>
+				<button class="btn btn-info btn-xs text-right" ng-click="getMensajeAyuda()">
+					Ayuda
+				</button>
+			</div>
+			<div class="form-group">    		
+				<label class="control-label" for="cantidadEuro">Ingrese Cantidad de Dolares: </label>
+				<input type="text" id="cantidadEuro" class="form-control" name="cantidadEuro" ng-model="cantidadEuro">
+				<div class="help-block">
+					{{ mensajeAyuda }}
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="col-sm-4">
+		<div class="box-model">
+			<div class="box-model-heading">
+				<h3>Precio de Cambio Euro a Bolivares.: </h3>
+			</div>
+			<div class="box-model-body">
+				<h2>{{ (cantidadEuro * precioTasa) }} BsF. </h2>
+			</div>
+		</div>
+	</div>
+</div>
