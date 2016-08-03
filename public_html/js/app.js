@@ -16,6 +16,9 @@ angularAplication.config(['$routeProvider', function($routeProvider){
 	when('/ejemplo-colecciones', {
 		templateUrl: 'views/ejemplo-colecciones.html',
 	}).
+	when('/ejemplo-ajax', {
+		templateUrl: 'views/ejemplo-ajax.html',
+	}).
 	otherwise({
 		redirectTo: '/',
 		templateUrl: 'views/bienvenido.html',
@@ -118,4 +121,37 @@ angularAplication.controller('manipularDOMController', ['$scope', function($scop
 	$scope.ocultarMensaje = function(){
 		$scope.visibilidadMensaje = false;
 	}
+}]);
+
+angularAplication.controller('ejemploAjaxController', ['$scope', '$http', function($scope, $http){
+	
+	$scope.posts = [];
+	$scope.newPost = {};
+
+	//Load Posts
+
+	$http.get('https://jsonplaceholder.typicode.com/posts')
+	.success(function(data){
+		$scope.posts = data;
+	})
+	.error(function(err){
+		console.log(err);
+	});
+
+	$scope.addRequestPost = function(){
+		$http.post('https://jsonplaceholder.typicode.com/posts', {
+			title: $scope.newPost.title,
+			body: $scope.newPost.body,
+			userId: 1
+		})
+		.success(function(data, status, headers, config){
+			console.log(data);
+
+			$scope.posts.push(data);
+			$scope.newPost = {};
+		})
+		.error(function(error, status, headers, config){
+			console.log(error);
+		});
+	};
 }]);
