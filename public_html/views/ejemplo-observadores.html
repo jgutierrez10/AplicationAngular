@@ -1,0 +1,29 @@
+<h3 class="text-center">Ejemplo Observadores</h3>	
+<hr>
+<div class="col-md-6 col-md-offset-3 form-observed well" ng-controller="observadorController">
+	<form class="form-horizontal">
+		<div class="form-group">
+			<div class="col-xs-12"><p class="text-center lead">Inicie para continuar...</p></div>
+		</div>
+		<div class="form-group">
+			<div class="col-md-2">
+		    	<label class="control-label">Username</label>
+		    </div>
+		    <div class="col-md-10">
+				<input type="text" name="username" class="form-control" placeholder="Username" ng-model="username">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-md-2">
+				<label class="control-label">Password</label>
+			</div>
+			<div class="col-md-10">
+				<input type="password" name="password" class="form-control" placeholder="Password" ng-model="password">
+				<p ng-show="errorMinimo">Error: No cumple con el mínimo de caracteres (6)</p>
+			</div>
+		</div>
+		<div class="form-group text-center">
+			<input type="submit" name="requestForm" class="btn btn-primary" value="Iniciar">
+		</div>
+	</form>
+</div>

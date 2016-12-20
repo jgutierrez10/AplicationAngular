@@ -19,6 +19,9 @@ angularAplication.config(['$routeProvider', function($routeProvider){
 	when('/ejemplo-ajax', {
 		templateUrl: 'views/ejemplo-ajax.html',
 	}).
+	when('/ejemplo-observadores', {
+		templateUrl: 'views/ejemplo-observadores.html',
+	}).
 	otherwise({
 		redirectTo: '/',
 		templateUrl: 'views/bienvenido.html',
@@ -154,4 +157,11 @@ angularAplication.controller('ejemploAjaxController', ['$scope', '$http', functi
 			console.log(error);
 		});
 	};
+}]);
+
+angularAplication.controller('observadorController', ['$scope', function($scope){
+
+	$scope.errorMinimo = false;
+
+
 }]);
